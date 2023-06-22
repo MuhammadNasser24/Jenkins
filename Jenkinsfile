@@ -2,15 +2,13 @@ pipeline {
   agent any
 
   parameters {
-    // Define your parameters here
-    // For example, a string parameter and a choice parameter
+    // Defining my parameters
     string(name: 'VERSION', defaultValue: '1.0', description: 'Enter the version number')
     choice(name: 'ENVIRONMENT', choices: ['dev', 'staging', 'production'], description: 'Select the target environment')
   }
 
   environment {
-    // Define your environment variables here
-    // For example, setting a custom variable
+    // Defining my environment variables
     MY_VARIABLE = 'some value'
   }
 
@@ -18,7 +16,6 @@ pipeline {
     stage('Build') {
       steps {
         // Add build steps here
-        // For example, running a shell command
         sh 'echo "Building the project..."'
       }
     }
@@ -26,7 +23,6 @@ pipeline {
     stage('Test') {
       steps {
         // Add test steps here
-        // For example, running test scripts or commands
         sh 'echo "Running tests..."'
       }
     }
@@ -34,7 +30,6 @@ pipeline {
     stage('Deploy') {
       steps {
         // Add deployment steps here
-        // For example, deploying to a specific environment based on the selected choice parameter
         sh 'echo "Deploying to ${ENVIRONMENT} environment..."'
       }
     }
